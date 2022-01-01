@@ -5,8 +5,10 @@ let timer = 0
 timer = -1
 basic.forever(function () {
     if (timer > 0) {
-        basic.pause(1000)
+        basic.pause(500)
         basic.showIcon(IconNames.SmallDiamond)
+        basic.pause(500)
+        basic.showIcon(IconNames.Target)
         timer += -1
     }
     if (timer == 0) {
