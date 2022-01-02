@@ -5,15 +5,15 @@ let timer = 0
 timer = -1
 basic.forever(function () {
     if (timer > 0) {
-        basic.pause(500)
         basic.showIcon(IconNames.SmallDiamond)
-        basic.pause(500)
+        music.playTone(392, music.beat(BeatFraction.Half))
         basic.showIcon(IconNames.Target)
+        music.playTone(440, music.beat(BeatFraction.Half))
         timer += -1
     }
     if (timer == 0) {
         basic.showIcon(IconNames.Skull)
-        music.playMelody("B G A F C G C E ", 120)
+        soundExpression.sad.playUntilDone()
         timer = -1
     }
     if (timer == -1) {
